@@ -64,7 +64,17 @@ const Contact = () => {
               <div className="grid sm:grid-cols-2 gap-6">
                 {[
                   { icon: <MapPin className="w-5 h-5" />, title: "Our Office", detail: "Hyderabad, Telangana, India" },
-                  { icon: <Phone className="w-5 h-5" />, title: "Phone", detail: "+91 7337224447" },
+                  { 
+                    icon: <Phone className="w-5 h-5" />, 
+                    title: "Phone", 
+                    detail: (
+                      <div className="space-y-1">
+                        <div>+91 7337224447</div>
+                        <div>+91 7386791602</div>
+                        <div>+91 7386798282</div>
+                      </div>
+                    ) 
+                  },
                   { icon: <Mail className="w-5 h-5" />, title: "Email", detail: "info@biowinlife.com" },
                   { icon: <Clock className="w-5 h-5" />, title: "Working Hours", detail: "Mon - Sat: 9:00 AM - 6:00 PM" }
                 ].map((item, i) => (
@@ -74,7 +84,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="text-base font-bold text-brand-950 mb-1">{item.title}</h4>
-                      <p className="text-xs text-brand-900/60 font-medium">{item.detail}</p>
+                      <div className="text-xs text-brand-900/60 font-medium">{item.detail}</div>
                     </div>
                   </div>
                 ))}
