@@ -111,21 +111,25 @@ const Products = () => {
                 <motion.div
                   key={product.name}
                   whileHover={{ y: -6 }}
-                  className="group bg-white rounded-[22px] border border-brand-100 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col w-full max-w-sm"
+                  className="group bg-white rounded-[22px] border border-brand-100 shadow-sm hover:shadow-lg transition-all overflow-hidden flex flex-col w-full max-w-sm"
                 >
-                  <div className="relative aspect-[4/3] bg-white border-b border-brand-100 shadow-sm">
+                  <div className="relative aspect-[4/3] bg-brand-50 border-b border-brand-100 flex items-center justify-center p-4">
                     <img
                       src={product.img}
                       alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03] rounded-t-[22px]"
+                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   </div>
-                  <div className="p-5 flex flex-col h-full">
+                  <div className="p-6 flex flex-col flex-1">
                     <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-500 mb-2">
                       {product.category}
                     </div>
-                    <h4 className="text-xl font-bold text-brand-950 mb-2">{product.name}</h4>
-                    <p className="text-sm text-brand-900/60 leading-relaxed">{product.desc}</p>
+                    <h4 className="text-xl font-bold text-brand-950 mb-3 leading-snug">
+                      {product.name}
+                    </h4>
+                    <p className="text-sm text-brand-900/70 leading-relaxed">
+                      {product.desc}
+                    </p>
                   </div>
                 </motion.div>
               ))}
