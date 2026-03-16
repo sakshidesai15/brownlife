@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,10 +65,6 @@ const Navbar = () => {
                   )}
                 </Link>
               ))}
-              <div className="flex items-center text-sm font-semibold text-white/80">
-                <Phone className="w-4 h-4 mr-2 text-brand-300" />
-                +91 7337224447
-              </div>
               <Link
                 to="/contact"
                 className="bg-brand-500 text-white px-7 py-3 rounded-xl text-sm font-bold uppercase tracking-wider hover:bg-brand-400 transition-all shadow-md hover:shadow-lg active:scale-95"
@@ -107,10 +103,6 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <div className="flex items-center gap-2 px-3 pt-4 text-sm font-semibold text-brand-900">
-                <Phone className="w-4 h-4 text-brand-600" />
-                +91 7337224447
-              </div>
             </div>
           </motion.div>
         )}

@@ -75,7 +75,17 @@ const Contact = () => {
                       </div>
                     ) 
                   },
-                  { icon: <Mail className="w-5 h-5" />, title: "Email", detail: "info@biowinlife.com" },
+                  { 
+                    icon: <Mail className="w-5 h-5" />, 
+                    title: "Email", 
+                    detail: (
+                      <div className="space-y-1">
+                        <div>kalyani.mscbio@gmail.com</div>
+                        <div>hrbiowin@gmail.com</div>
+                        <div>manikyasriram@gmail.com</div>
+                      </div>
+                    ) 
+                  },
                   { icon: <Clock className="w-5 h-5" />, title: "Working Hours", detail: "Mon - Sat: 9:00 AM - 6:00 PM" }
                 ].map((item, i) => (
                   <div key={i} className="flex items-start space-x-4 group">
