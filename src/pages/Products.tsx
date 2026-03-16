@@ -1,52 +1,51 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Activity, Brain, ShieldCheck, Zap, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Zap } from 'lucide-react';
 import ImageWithFallback from '../components/ImageWithFallback';
+import productImage1 from '../assets/image1.jpeg';
+import productImage2 from '../assets/image2.jpeg';
+import productImage3 from '../assets/image3.jpeg';
+import productImage4 from '../assets/image4.jpeg';
+import productImage5 from '../assets/image5.jpeg';
 
 const Products = () => {
-  const categories = [
+  const products = [
     {
-      id: 'ortho',
-      title: "Ortho Care",
-      icon: <Activity className="w-8 h-8" />,
-      description: "Advanced combinations for bone health, joint mobility, and pain management.",
-      medicines: [
-        { name: "Ortho-Flex Plus", desc: "Advanced joint support formula" },
-        { name: "Bone-Vital D3", desc: "High-potency calcium & D3 supplement" },
-        { name: "Joint-Ease Max", desc: "Maximum strength mobility enhancer" },
-        { name: "Calci-Win Forte", desc: "Bone density support combination" }
-      ]
+      name: 'B24 Nutraceuticals',
+      category: 'Softgel Capsules',
+      desc: 'Softgel capsules with Omega-3, grape seed extract, biotin, zinc, selenium and vitamin D3.',
+      img: productImage1,
     },
     {
-      id: 'neuro',
-      title: "Neuro Care",
-      icon: <Brain className="w-8 h-8" />,
-      description: "Innovative formulations for cognitive health, nerve recovery, and neuro-protection.",
-      medicines: [
-        { name: "Neuro-Boost 500", desc: "Cognitive function support" },
-        { name: "Cerebro-Win", desc: "Advanced brain health formula" },
-        { name: "Nerve-Glow Forte", desc: "Nerve regeneration support" },
-        { name: "Synapse-Active", desc: "Neuro-transmitter optimization" }
-      ]
+      name: 'CHYMOHEAL FORTE',
+      category: 'Trypsin-Chymotrypsin Tablets (Rx)',
+      desc: 'Trypsin-Chymotrypsin tablets in 10x10 alu-alu pack.',
+      img: productImage2,
     },
     {
-      id: 'pharma',
-      title: "Pharmaceutical Products",
-      icon: <ShieldCheck className="w-8 h-8" />,
-      description: "A wide range of high-quality pharmaceutical products for various healthcare needs.",
-      medicines: [
-        { name: "Multi-Win Gold", desc: "Comprehensive multivitamin support" },
-        { name: "Immuno-Win", desc: "Immune system strengthening formula" },
-        { name: "Gastro-Ease", desc: "Digestive health and comfort" },
-        { name: "Vital-Care", desc: "General wellness and vitality" }
-      ]
-    }
+      name: 'Smox-CV 625',
+      category: 'Tablets (Rx)',
+      desc: 'Amoxycillin, potassium clavulanate and lactic acid bacillus tablets.',
+      img: productImage3,
+    },
+    {
+      name: 'WinMove-Plus',
+      category: 'Tablets',
+      desc: 'Levocarnitine L-tartrate, magnesium bisglycinate, cyanocobalamin and vitamin E tablets.',
+      img: productImage4,
+    },
+    {
+      name: 'WinMove',
+      category: 'Nutraceutical',
+      desc: 'Levocarnitine, magnesium bisglycinate, tocotrienols, Co-enzyme Q10 and astaxanthin tablets.',
+      img: productImage5,
+    },
   ];
 
   return (
     <div className="pt-24">
       {/* Page Header */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <ImageWithFallback 
             src="https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&q=80&w=2000" 
@@ -75,84 +74,68 @@ const Products = () => {
         </div>
       </section>
 
-      {/* Product Categories */}
+      {/* Product Catalog */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-24">
-            {categories.map((category, idx) => (
-              <div key={category.id} className="grid lg:grid-cols-2 gap-12 items-center">
-                <motion.div
-                  initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className={idx % 2 !== 0 ? 'lg:order-2' : ''}
-                >
-                  <div className="bg-brand-100 w-12 h-12 rounded-2xl flex items-center justify-center mb-6 text-brand-600 shadow-inner">
-                    {React.cloneElement(category.icon as React.ReactElement, { className: 'w-6 h-6' })}
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-brand-950 mb-6 leading-tight">{category.title}</h2>
-                  <p className="text-base text-brand-900/60 leading-relaxed mb-8">
-                    {category.description}
-                  </p>
-                  <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                    <div className="flex items-center space-x-3 bg-brand-50 p-4 rounded-xl border border-brand-100">
-                      <div className="bg-white p-2 rounded-lg shadow-sm">
-                        <ShieldCheck className="text-brand-600 w-4 h-4" />
-                      </div>
-                      <span className="text-sm font-bold text-brand-950">Quality Tested</span>
-                    </div>
-                    <div className="flex items-center space-x-3 bg-brand-50 p-4 rounded-xl border border-brand-100">
-                      <div className="bg-white p-2 rounded-lg shadow-sm">
-                        <Zap className="text-brand-600 w-4 h-4" />
-                      </div>
-                      <span className="text-sm font-bold text-brand-950">Unique Formula</span>
-                    </div>
-                  </div>
-                  
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {category.medicines.map((med, i) => (
-                      <motion.div
-                        key={i}
-                        whileHover={{ scale: 1.02 }}
-                        className="bg-white p-4 rounded-xl shadow-sm border border-brand-100 hover:shadow-lg transition-all group cursor-pointer"
-                      >
-                        <h4 className="text-base font-bold text-brand-950 mb-1 group-hover:text-brand-600 transition-colors">{med.name}</h4>
-                        <p className="text-xs text-brand-900/60">{med.desc}</p>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-                
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
-                  className={`relative ${idx % 2 !== 0 ? 'lg:order-1' : ''}`}
-                >
-                  <div className="relative z-10 rounded-[40px] overflow-hidden shadow-xl">
-                    <ImageWithFallback 
-                      src={
-                        category.id === 'ortho' ? "https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&q=80&w=1000" :
-                        category.id === 'neuro' ? "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=1000" :
-                        "/Pharmaceutical Products.png"
-                      } 
-                      alt={category.title} 
-                      className="w-full h-[350px] object-cover"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 to-transparent"></div>
-                  </div>
-                </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+              <div>
+                <h2 className="text-brand-600 font-bold uppercase tracking-[0.2em] text-xs mb-4">Product Catalog</h2>
+                <h3 className="text-3xl md:text-4xl font-bold text-brand-950">Our Product Portfolio</h3>
+                <p className="text-base text-brand-900/60 max-w-2xl mt-3">
+                  A curated selection of client products with authentic pack images.
+                </p>
               </div>
-            ))}
-          </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="flex items-center space-x-3 bg-brand-50 p-4 rounded-xl border border-brand-100 shadow-sm">
+                  <div className="bg-white p-2 rounded-lg shadow-sm">
+                    <ShieldCheck className="text-brand-600 w-4 h-4" />
+                  </div>
+                  <span className="text-sm font-bold text-brand-950">Quality Tested</span>
+                </div>
+                <div className="flex items-center space-x-3 bg-brand-50 p-4 rounded-xl border border-brand-100 shadow-sm">
+                  <div className="bg-white p-2 rounded-lg shadow-sm">
+                    <Zap className="text-brand-600 w-4 h-4" />
+                  </div>
+                  <span className="text-sm font-bold text-brand-950">Unique Formula</span>
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
+              {products.map((product) => (
+                <motion.div
+                  key={product.name}
+                  whileHover={{ y: -6 }}
+                  className="group bg-white rounded-[22px] border border-brand-100 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col w-full max-w-sm"
+                >
+                  <div className="relative aspect-[4/3] bg-white border-b border-brand-100 shadow-sm">
+                    <img
+                      src={product.img}
+                      alt={product.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03] rounded-t-[22px]"
+                    />
+                  </div>
+                  <div className="p-5 flex flex-col h-full">
+                    <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-500 mb-2">
+                      {product.category}
+                    </div>
+                    <h4 className="text-xl font-bold text-brand-950 mb-2">{product.name}</h4>
+                    <p className="text-sm text-brand-900/60 leading-relaxed">{product.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Quality Commitment */}
-      <section className="py-20 bg-brand-50 relative overflow-hidden">
+      <section className="py-24 bg-brand-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -186,7 +169,7 @@ const Products = () => {
       </section>
 
       {/* Product Inquiry CTA */}
-      <section className="py-20 bg-brand-600 relative overflow-hidden">
+      <section className="py-24 bg-brand-600 relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-10">
           <ImageWithFallback 
             src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=2000" 
@@ -198,14 +181,14 @@ const Products = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl font-bold text-white mb-6">Looking for a Specific Formulation?</h2>
           <p className="text-lg text-brand-100 mb-10 max-w-2xl mx-auto">
-            Our team of experts is constantly working on new and innovative combinations. Contact us for detailed product lists or partnership inquiries.
+            Our team develops innovative pharmaceutical combinations tailored for modern healthcare.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="/contact" className="bg-white text-brand-600 px-8 py-3 rounded-xl font-bold hover:bg-brand-50 transition-all shadow-lg">
-              Inquire Now
+            <a href="/contact" className="bg-white text-brand-700 px-8 py-3 rounded-xl font-bold hover:bg-brand-50 transition-all shadow-lg">
+              Contact Us
             </a>
-            <a href="/about" className="bg-brand-700 text-white px-8 py-3 rounded-xl font-bold hover:bg-brand-800 transition-all shadow-lg">
-              Learn More
+            <a href="/contact" className="bg-brand-800 text-white px-8 py-3 rounded-xl font-bold hover:bg-brand-900 transition-all shadow-lg">
+              Request Product List
             </a>
           </div>
         </div>
