@@ -2,11 +2,12 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ShieldCheck, Zap } from 'lucide-react';
 import ImageWithFallback from '../components/ImageWithFallback';
-import productImage1 from '../assets/image1.jpeg';
-import productImage2 from '../assets/image2.jpeg';
-import productImage3 from '../assets/image3.jpeg';
-import productImage4 from '../assets/image4.jpeg';
-import productImage5 from '../assets/image5.jpeg';
+import productB24 from '../assets/B24.png';
+import productSmox from '../assets/smox-CV 625.png';
+import productWinMove from '../assets/WinMove.png';
+import productWinMovePlus from '../assets/WinMove-Plus.png';
+import productWinTryo from '../assets/WinTryo.png';
+import productGlowin from '../assets/Glowin.png';
 
 const Products = () => {
   const products = [
@@ -14,31 +15,37 @@ const Products = () => {
       name: 'B24 Nutraceuticals',
       category: 'Softgel Capsules',
       desc: 'Softgel capsules with Omega-3, grape seed extract, biotin, zinc, selenium and vitamin D3.',
-      img: productImage1,
-    },
-    {
-      name: 'CHYMOHEAL FORTE',
-      category: 'Trypsin-Chymotrypsin Tablets (Rx)',
-      desc: 'Trypsin-Chymotrypsin tablets in 10x10 alu-alu pack.',
-      img: productImage2,
+      img: productB24,
     },
     {
       name: 'Smox-CV 625',
       category: 'Tablets (Rx)',
       desc: 'Amoxycillin, potassium clavulanate and lactic acid bacillus tablets.',
-      img: productImage3,
+      img: productSmox,
     },
     {
       name: 'WinMove-Plus',
       category: 'Tablets',
       desc: 'Levocarnitine L-tartrate, magnesium bisglycinate, cyanocobalamin and vitamin E tablets.',
-      img: productImage4,
+      img: productWinMovePlus,
     },
     {
       name: 'WinMove',
       category: 'Nutraceutical',
       desc: 'Levocarnitine, magnesium bisglycinate, tocotrienols, Co-enzyme Q10 and astaxanthin tablets.',
-      img: productImage5,
+      img: productWinMove,
+    },
+    {
+      name: 'WinTryo',
+      category: 'Nutraceutical',
+      desc: 'Collagen type II, glucosamine, sodium hyaluronic acid, MSM, chondroitin, vitamins and minerals.',
+      img: productWinTryo,
+    },
+    {
+      name: 'Glowin',
+      category: 'Nutraceutical',
+      desc: 'L-glutathione, pine bark extract, grape seed extract, rosehip extract, N-acetylcysteine and vitamin C tablets.',
+      img: productGlowin,
     },
   ];
 

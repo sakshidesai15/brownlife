@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import ImageWithFallback from '../components/ImageWithFallback';
+import productWinMovePlus from '../assets/WinMove-Plus.png';
+import productB24 from '../assets/B24.png';
+import productSmox from '../assets/smox-CV 625.png';
 import { 
   Activity, 
   Brain, 
@@ -244,25 +247,25 @@ const Home = () => {
             </Link>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { 
-                name: "Ortho-Flex Plus", 
+                name: "WinMove-Plus", 
                 cat: "Ortho Care", 
-                img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600",
-                desc: "Advanced joint support formula for maximum mobility."
+                img: productWinMovePlus,
+                desc: "Tablets with levocarnitine, magnesium bisglycinate, cyanocobalamin and vitamin E."
               },
               { 
-                name: "Neuro-Boost 500", 
-                cat: "Neuro Care", 
-                img: "/Neuro-Boost 500.png",
-                desc: "Cognitive function support with neuro-protective properties."
-              },
-              { 
-                name: "Multi-Win Gold", 
+                name: "B24 Nutraceuticals", 
                 cat: "General Pharma", 
-                img: "/Multi-Win Gold.png",
-                desc: "Comprehensive multivitamin support for daily vitality."
+                img: productB24,
+                desc: "Softgel capsules with Omega-3, grape seed extract, biotin, zinc, selenium and vitamin D3."
+              },
+              { 
+                name: "Smox-CV 625", 
+                cat: "General Pharma", 
+                img: productSmox,
+                desc: "Amoxycillin, potassium clavulanate and lactic acid bacillus tablets."
               }
             ].map((product, i) => (
               <motion.div
@@ -271,23 +274,22 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group cursor-pointer"
+                className="group"
               >
-                <div className="relative h-64 rounded-[32px] overflow-hidden mb-6 shadow-md">
+                <div className="bg-white rounded-[28px] border border-brand-100 shadow-md hover:shadow-xl transition-all overflow-hidden">
+                  <div className="relative aspect-[4/3] bg-white">
                   <ImageWithFallback 
                     src={product.img} 
                     alt={product.name} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain p-4 group-hover:scale-[1.02] transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-white/90 backdrop-blur-md text-brand-500 px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest shadow-sm">
-                      {product.cat}
-                    </span>
+                  </div>
+                  <div className="p-6">
+                    <h4 className="text-xl font-extrabold text-brand-950 mb-2 group-hover:text-brand-600 transition-colors">{product.name}</h4>
+                    <p className="text-sm text-brand-900/70 leading-relaxed font-medium">{product.desc}</p>
                   </div>
                 </div>
-                <h4 className="text-xl font-extrabold text-brand-950 mb-2 group-hover:text-brand-500 transition-colors">{product.name}</h4>
-                <p className="text-sm text-brand-900/60 leading-relaxed font-medium">{product.desc}</p>
               </motion.div>
             ))}
           </div>
