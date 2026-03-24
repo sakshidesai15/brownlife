@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ImageWithFallback from '../components/ImageWithFallback';
 import winMoveImage from '../assets/WinMove.png';
@@ -6,6 +6,8 @@ import sakethPhoto from '../assets/saketh.png';
 const brandLogo = '/logo/WhatsApp Image 2026-03-13 at 1.00.06 PM.jpeg';
 
 const WinMove = () => {
+  const [showFullFeedback, setShowFullFeedback] = useState(false);
+
   return (
     <div className="pt-24">
       {/* Hero */}
@@ -89,15 +91,90 @@ const WinMove = () => {
           <div>
             <h2 className="text-brand-600 font-bold uppercase tracking-[0.2em] text-xs mb-4">Doctor Feedback</h2>
             <h3 className="text-3xl font-bold text-brand-950 mb-4">Dr. A.S.P.V.S. Saketh</h3>
-            <p className="text-sm text-brand-900/70 mb-4 font-semibold">
-              M.S. Ortho, FIAS, PDCR, FISRM · Orthopaedic &amp; Sports Surgeon
-            </p>
-            <p className="text-base text-brand-900/70 leading-relaxed">
-              “In contemporary orthopaedics and sports medicine, optimizing cellular energetics and
-              neuromuscular integrity is essential. Targeted nutraceuticals such as Levocarnitine,
-              Magnesium Bisglycinate, Coenzyme Q10, Tocotrienols, and Astaxanthin support this axis
-              and complement precision, performance-driven care.”
-            </p>
+            <div className="text-sm text-brand-900/70 mb-4 font-semibold space-y-1">
+              <div>M.S. Orthopaedics, FIAS</div>
+              <div>Fellow in Arthroscopy &amp; Sports Medicine</div>
+              <div>Joint Replacement Surgeries</div>
+              <div>Advanced Clinical Rheumatology ACR (USA), EULAR (Europe)</div>
+              <div>Orthobiologics &amp; Regenerative Medicine</div>
+            </div>
+            <div
+              className={`text-base text-brand-900/70 leading-relaxed space-y-4 ${!showFullFeedback ? 'max-h-40 overflow-hidden relative' : ''}`}
+            >
+              <p>
+                “In contemporary orthopaedics and sports medicine, the paradigm is steadily shifting
+                from a bone-centric model to a muscle–metabolism–mitochondria axis, recognizing that
+                ‘the skeleton does not move itself—muscle is the true engine, and metabolism is its fuel.’
+                Optimal musculoskeletal health is therefore inseparable from cellular energetics, redox
+                balance, and neuromuscular integrity. The integration of targeted nutraceuticals such as
+                Levocarnitine, Magnesium Bisglycinate, Coenzyme Q10, Tocotrienols, and Astaxanthin
+                represents a scientifically grounded strategy to enhance this axis.
+              </p>
+              <p>
+                At the core lies Levocarnitine, a pivotal mediator of mitochondrial fatty acid transport.
+                In high-demand states—post-operative recovery, tendon healing, or chronic overuse
+                injuries—muscle bioenergetics becomes a rate-limiting step. Carnitine’s role in
+                β-oxidation directly translates into improved ATP availability, reduced lactate accumulation,
+                and mitigation of fatigue. Clinically, in athletes recovering from anterior cruciate ligament
+                reconstruction or rotator cuff repair, early fatigue resistance and improved muscle endurance
+                often dictate functional outcomes. Additionally, its ammonia-buffering capacity becomes
+                particularly relevant in high-intensity rehabilitation phases, where metabolic byproducts can
+                impair muscle performance.
+              </p>
+              <p>
+                Magnesium Bisglycinate complements this by stabilizing neuromuscular excitability. As an
+                NMDA receptor modulator, magnesium reduces excessive neuronal firing, thereby preventing
+                muscle cramps, fasciculations, and subclinical spasm—frequent impediments in rehabilitation.
+                Its role in over 300 enzymatic reactions, particularly those governing ATP synthesis and
+                glucose metabolism, underscores a critical principle: “A fatigued muscle is often not weak,
+                but metabolically inefficient.” In clinical practice, magnesium repletion has shown tangible
+                benefits in athletes with recurrent calf strains and in elderly patients with sarcopenia-associated
+                instability.
+              </p>
+              <p>
+                The mitochondrial axis is further strengthened by Coenzyme Q10, an indispensable component
+                of the electron transport chain. Beyond its bioenergetic role, CoQ10 acts as a lipid-phase
+                antioxidant, preserving membrane integrity in both muscle and cartilage cells. In degenerative
+                conditions such as early osteoarthritis, where oxidative stress accelerates chondrocyte apoptosis,
+                CoQ10 offers a protective milieu. Moreover, in patients on statin therapy presenting with myalgias—a
+                common orthopaedic referral—CoQ10 supplementation frequently restores muscle function and
+                exercise tolerance.
+              </p>
+              <p>
+                Tocotrienols, the advanced members of the vitamin E family, extend benefits into vascular and
+                neuroprotective domains. Their ability to inhibit HMG-CoA reductase introduces a natural lipid-lowering
+                effect, improving microvascular perfusion to muscle and bone. From a surgical perspective, enhanced
+                microcirculation directly correlates with improved graft incorporation, fracture healing, and soft tissue
+                recovery. Their anti-inflammatory and anti-proliferative effects also open avenues in modulating
+                aberrant healing responses such as fibrosis.
+              </p>
+              <p>
+                Finally, Astaxanthin, often termed the “king of carotenoids,” provides unparalleled antioxidant defense.
+                Its unique ability to span lipid bilayers ensures comprehensive protection against exercise-induced
+                oxidative stress. In high-performance athletes, this translates into reduced delayed onset muscle
+                soreness (DOMS), faster recovery, and sustained performance. Importantly, its capacity to cross the
+                blood–brain and retinal barriers highlights a broader neuromuscular benefit—enhancing coordination,
+                visual acuity, and reaction time, all critical in sports performance.
+              </p>
+              <p>
+                In synthesis, these compounds collectively reinforce a central orthopaedic tenet: “Strong bones are
+                a reflection of stronger muscles, and stronger muscles are a reflection of superior cellular health.”
+                By optimizing mitochondrial efficiency, reducing oxidative stress, and enhancing neuromuscular
+                stability, they not only accelerate recovery but redefine performance thresholds. For the modern
+                orthopaedic and sports surgeon, such integrative strategies are no longer adjuncts—they are essential
+                tools in delivering precision, performance-driven care.”
+              </p>
+            </div>
+            {!showFullFeedback && (
+              <div className="-mt-10 h-12 bg-gradient-to-t from-brand-50 to-transparent relative pointer-events-none"></div>
+            )}
+            <button
+              type="button"
+              onClick={() => setShowFullFeedback((prev) => !prev)}
+              className="mt-2 inline-flex items-center text-sm font-bold text-brand-700 hover:text-brand-800 transition-colors underline underline-offset-4"
+            >
+              {showFullFeedback ? 'Read less' : 'Read more'}
+            </button>
           </div>
         </div>
       </section>
