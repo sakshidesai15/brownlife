@@ -78,11 +78,11 @@ const WinMove = () => {
       <section className="py-20 bg-brand-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
           <div className="relative">
-            <div className="rounded-[28px] overflow-hidden shadow-xl border border-brand-100">
+            <div className="rounded-[28px] overflow-hidden shadow-xl border border-brand-100 aspect-[4/5] bg-brand-50 max-w-md mx-auto">
               <ImageWithFallback
                 src={sakethPhoto}
                 alt="Dr. A.S.P.V.S. Saketh"
-                className="w-full h-[360px] object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
           </div>
