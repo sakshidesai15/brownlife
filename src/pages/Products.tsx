@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { ShieldCheck, Zap } from 'lucide-react';
 import ImageWithFallback from '../components/ImageWithFallback';
 import productB24 from '../assets/B24.png';
@@ -8,20 +9,19 @@ import productWinMove from '../assets/WinMove.png';
 import productWinMovePlus from '../assets/WinMove-Plus.png';
 import productWinTryo from '../assets/WinTryo.png';
 import productGlowin from '../assets/Glowin.png';
+import productTolpiwin from '../assets/Tolpiwin-P.jpeg';
+import productNPX from '../assets/NPX-500.jpeg';
+import productBioRide from '../assets/BioRide ET.png';
+import productChymoheal from '../assets/CHYMOHEAL FORTE.png';
+import fallbackImage from '../assets/image-fallback.svg';
 
 const Products = () => {
   const products = [
     {
-      name: 'B24 Nutraceuticals',
-      category: 'Softgel Capsules',
-      desc: 'Softgel capsules with Omega-3, grape seed extract, biotin, zinc, selenium and vitamin D3.',
-      img: productB24,
-    },
-    {
-      name: 'Smox-CV 625',
-      category: 'Tablets (Rx)',
-      desc: 'Amoxycillin, potassium clavulanate and lactic acid bacillus tablets.',
-      img: productSmox,
+      name: 'WinMove',
+      category: 'Nutraceutical',
+      desc: 'Levocarnitine, magnesium bisglycinate, tocotrienols, Co-enzyme Q10 and astaxanthin tablets.',
+      img: productWinMove,
     },
     {
       name: 'WinMove-Plus',
@@ -30,16 +30,64 @@ const Products = () => {
       img: productWinMovePlus,
     },
     {
-      name: 'WinMove',
-      category: 'Nutraceutical',
-      desc: 'Levocarnitine, magnesium bisglycinate, tocotrienols, Co-enzyme Q10 and astaxanthin tablets.',
-      img: productWinMove,
-    },
-    {
       name: 'WinTryo',
       category: 'Nutraceutical',
       desc: 'Collagen type II, glucosamine, sodium hyaluronic acid, MSM, chondroitin, vitamins and minerals.',
       img: productWinTryo,
+    },
+    {
+      name: 'Trawin',
+      category: 'Tablets',
+      desc: 'Pharmaceutical tablet formulation.',
+      img: fallbackImage,
+    },
+    {
+      name: 'BioRide ET',
+      category: 'Tablets',
+      desc: 'Pharmaceutical tablet formulation.',
+      img: productBioRide,
+    },
+    {
+      name: 'Tolpiwin-P',
+      category: 'Tablets',
+      desc: 'Pharmaceutical tablet formulation.',
+      img: productTolpiwin,
+    },
+    {
+      name: 'Chymoheal Forte',
+      category: 'Tablets (Rx)',
+      desc: 'Trypsin-Chymotrypsin tablets in 10x10 alu-alu pack.',
+      img: productChymoheal,
+    },
+    {
+      name: 'WinCalm D3',
+      category: 'Tablets',
+      desc: 'Pharmaceutical tablet formulation.',
+      img: fallbackImage,
+    },
+    {
+      name: 'NPX',
+      category: 'Tablets',
+      desc: 'Pharmaceutical tablet formulation.',
+      img: productNPX,
+    },
+    {
+      name: 'B24',
+      category: 'Softgel Capsules',
+      desc: 'Softgel capsules with Omega-3, grape seed extract, biotin, zinc, selenium and vitamin D3.',
+      img: productB24,
+    },
+    {
+      name: 'Smox CV',
+      category: 'Tablets (Rx)',
+      desc: 'Amoxycillin, potassium clavulanate and lactic acid bacillus tablets.',
+      img: productSmox,
+    },
+    {
+      name: 'WinRab DSR',
+      category: 'Capsules',
+      desc: 'Pharmaceutical capsule formulation.',
+      img: fallbackImage,
     },
     {
       name: 'Glowin',
@@ -113,14 +161,14 @@ const Products = () => {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
               {products.map((product) => (
                 <motion.div
                   key={product.name}
                   whileHover={{ y: -6 }}
-                  className="group bg-white rounded-[22px] border border-brand-100 shadow-sm hover:shadow-lg transition-all overflow-hidden flex flex-col w-full max-w-sm"
+                  className="group bg-white rounded-[22px] border border-brand-100 shadow-sm hover:shadow-lg transition-all overflow-hidden flex flex-col w-full"
                 >
-                  <div className="relative aspect-[4/3] bg-brand-50 border-b border-brand-100 flex items-center justify-center p-4">
+                  <div className="relative aspect-[4/3] bg-white border-b border-brand-100 flex items-center justify-center p-3">
                     <img
                       src={product.img}
                       alt={product.name}
@@ -134,9 +182,21 @@ const Products = () => {
                     <h4 className="text-xl font-bold text-brand-950 mb-3 leading-snug">
                       {product.name}
                     </h4>
-                    <p className="text-sm text-brand-900/70 leading-relaxed">
+                    <p className="text-sm text-brand-900/70 leading-relaxed min-h-[60px]">
                       {product.desc}
                     </p>
+                    <div className="mt-5 min-h-[40px]">
+                      {product.name === 'WinMove' ? (
+                        <Link
+                          to="/products/winmove"
+                          className="inline-flex items-center justify-center text-sm font-bold text-white bg-brand-700 hover:bg-brand-800 transition-colors px-4 py-2 rounded-lg w-full"
+                        >
+                          View Details
+                        </Link>
+                      ) : (
+                        <span className="block h-10"></span>
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               ))}

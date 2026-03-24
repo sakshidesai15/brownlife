@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Stethoscope, Award, BookOpen, Target, Activity } from 'lucide-react';
 import ImageWithFallback from '../components/ImageWithFallback';
-import leaderSaketh from '../assets/saketh.png';
 
 const Leadership = () => {
   return (
@@ -95,80 +94,6 @@ const Leadership = () => {
                         <div>
                           <p className="text-base font-bold text-brand-950">Visionary Leadership</p>
                           <p className="text-xs text-brand-900/60 font-medium">Strategic Growth Focus</p>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Profile */}
-      <section className="py-20 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-white rounded-[40px] shadow-xl overflow-hidden border border-brand-100 relative z-10"
-            >
-              <div className="grid lg:grid-cols-5 items-stretch">
-                <div className="lg:col-span-2 relative min-h-[350px] lg:min-h-full">
-                  <ImageWithFallback 
-                    src={leaderSaketh} 
-                    alt="Dr. A.S.P.V.S. Saketh" 
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 to-transparent"></div>
-                </div>
-                <div className="lg:col-span-3 p-8 lg:p-12 flex flex-col justify-center">
-                  <motion.div 
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
-                  >
-                    <div className="inline-block bg-brand-600 text-white px-4 py-1 rounded-full text-xs font-bold mb-6 uppercase tracking-[0.1em] shadow-lg shadow-brand-600/20">Orthopaedic & Sports Surgeon</div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-brand-950 mb-2 leading-tight">Dr. A.S.P.V.S. Saketh</h2>
-                    <p className="text-sm text-brand-900/70 mb-4 font-semibold">M.S. Orthopaedics, FIAS, PDCR, FISRM</p>
-                    <p className="text-sm text-brand-900/70 mb-6">
-                      Fellow in Arthroscopy &amp; Sports Medicine · Joint Replacement Surgeon · Regenerative Medicine Specialist
-                    </p>
-
-                    <div className="space-y-4 text-brand-900/70 leading-relaxed text-sm">
-                      <p>
-                        In contemporary orthopaedics and sports medicine, the paradigm is shifting from a bone-centric model to a muscle–metabolism–mitochondria axis. Optimizing cellular energetics, redox balance, and neuromuscular integrity is essential to musculoskeletal health and recovery.
-                      </p>
-                      <p>
-                        Targeted nutraceuticals such as Levocarnitine, Magnesium Bisglycinate, Coenzyme Q10, Tocotrienols, and Astaxanthin support mitochondrial efficiency, reduce oxidative stress, and enhance neuromuscular stability—helping improve endurance, recovery, and functional outcomes.
-                      </p>
-                      <p>
-                        This integrative approach complements modern orthopaedic care, aligning precision nutrition with performance-driven rehabilitation.
-                      </p>
-                    </div>
-                    
-                    <div className="grid sm:grid-cols-2 gap-6 mt-10">
-                      <div className="flex items-center space-x-4 group">
-                        <div className="bg-brand-50 p-3 rounded-xl text-brand-600 group-hover:bg-brand-600 group-hover:text-white transition-all duration-300">
-                          <BookOpen className="w-6 h-6" />
-                        </div>
-                        <div>
-                          <p className="text-base font-bold text-brand-950">Clinical Expertise</p>
-                          <p className="text-xs text-brand-900/60 font-medium">Orthopaedics &amp; Sports Medicine</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center space-x-4 group">
-                        <div className="bg-brand-50 p-3 rounded-xl text-brand-600 group-hover:bg-brand-600 group-hover:text-white transition-all duration-300">
-                          <Target className="w-6 h-6" />
-                        </div>
-                        <div>
-                          <p className="text-base font-bold text-brand-950">Regenerative Focus</p>
-                          <p className="text-xs text-brand-900/60 font-medium">Orthobiologics &amp; Recovery</p>
                         </div>
                       </div>
                     </div>

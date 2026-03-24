@@ -8,6 +8,7 @@ import About from './pages/About';
 import Products from './pages/Products';
 import Leadership from './pages/Leadership';
 import Contact from './pages/Contact';
+import WinMove from './pages/WinMove';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -31,6 +32,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/products/winmove" element={<WinMove />} />
             <Route path="/leadership" element={<Leadership />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
@@ -43,4 +45,3 @@ function App() {
 }
 
 export default App;
-
