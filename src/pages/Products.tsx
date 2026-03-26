@@ -13,6 +13,9 @@ import productTolpiwin from '../assets/Tolpiwin-P.jpeg';
 import productNPX from '../assets/NPX-500.jpeg';
 import productBioRide from '../assets/BioRide ET.png';
 import productChymoheal from '../assets/CHYMOHEAL FORTE.png';
+import productTraWin from '../assets/TraWin.jpeg';
+import productWinCalmD3 from '../assets/Wincalm-D3.jpeg';
+import productWinRabDSR from '../assets/WinRab-DSR.jpeg';
 import fallbackImage from '../assets/image-fallback.svg';
 
 const Products = () => {
@@ -38,8 +41,8 @@ const Products = () => {
     {
       name: 'Trawin',
       category: 'Tablets',
-      desc: 'Pharmaceutical tablet formulation.',
-      img: fallbackImage,
+      desc: 'TRAWIN 5 mg tablet contains Tofacitinib, a DMARD used for chronic inflammatory conditions including rheumatoid arthritis, psoriatic arthritis, ankylosing spondylitis, and ulcerative colitis. It reduces pain, swelling, and stiffness by suppressing the immune system and blocking Janus kinase (JAK) enzymes.',
+      img: productTraWin,
     },
     {
       name: 'BioRide ET',
@@ -63,7 +66,7 @@ const Products = () => {
       name: 'WinCalm D3',
       category: 'Tablets',
       desc: 'Pharmaceutical tablet formulation.',
-      img: fallbackImage,
+      img: productWinCalmD3,
     },
     {
       name: 'NPX',
@@ -86,8 +89,8 @@ const Products = () => {
     {
       name: 'WinRab DSR',
       category: 'Capsules',
-      desc: 'Pharmaceutical capsule formulation.',
-      img: fallbackImage,
+      desc: 'WINRAB DSR Capsule SR is a combination medicine used to treat gastroesophageal reflux disease (acid reflux). It relieves symptoms such as heartburn, stomach pain, or irritation, and helps neutralize acid while promoting easy passage of gas to reduce discomfort.',
+      img: productWinRabDSR,
     },
     {
       name: 'Glowin',
