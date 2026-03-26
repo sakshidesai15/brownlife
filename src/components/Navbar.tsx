@@ -9,6 +9,7 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -16,7 +17,9 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsOpen(false);
-    window.scrollTo(0, 0);
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
   }, [location.pathname]);
 
   const navLinks = [

@@ -6,6 +6,7 @@ const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
         setIsVisible(true);
@@ -19,6 +20,7 @@ const BackToTop = () => {
   }, []);
 
   const scrollToTop = () => {
+    if (typeof window === 'undefined') return;
     window.scrollTo({
       top: 0,
       behavior: 'smooth',

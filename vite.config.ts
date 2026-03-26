@@ -1,4 +1,5 @@
 import tailwindcss from '@tailwindcss/vite';
+import legacy from '@vitejs/plugin-legacy';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig, loadEnv} from 'vite';
@@ -7,7 +8,13 @@ export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
     publicDir: 'assets',
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(),
+      legacy({
+        targets: ['defaults', 'ios >= 12', 'safari >= 12'],
+      }),
+      tailwindcss(),
+    ],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
@@ -15,6 +22,12 @@ export default defineConfig(({mode}) => {
       alias: {
         '@': path.resolve(__dirname, '.'),
       },
+    },
+    build: {
+      target: 'es2017',
+    },
+    esbuild: {
+      target: 'es2017',
     },
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
