@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Stethoscope, Award, BookOpen, Target, Activity } from 'lucide-react';
 import ImageWithFallback from '../components/ImageWithFallback';
+import directorKalyaniPhoto from '../assets/director-kalyani.jpeg';
 
 const Leadership = () => {
   return (
@@ -50,10 +51,9 @@ const Leadership = () => {
               <div className="grid lg:grid-cols-5 items-stretch">
                 <div className="lg:col-span-2 relative min-h-[350px] lg:min-h-full">
                   <ImageWithFallback 
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
-                    alt="Ch. Kalyani" 
+                    src={directorKalyaniPhoto}
+                    alt="Chinthala Kalyani" 
                     className="absolute inset-0 w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 to-transparent"></div>
                 </div>
@@ -65,12 +65,12 @@ const Leadership = () => {
                     transition={{ delay: 0.3 }}
                   >
                     <div className="inline-block bg-brand-600 text-white px-4 py-1 rounded-full text-xs font-bold mb-6 uppercase tracking-[0.1em] shadow-lg shadow-brand-600/20">Director</div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-brand-950 mb-3 leading-tight">Ch. Kalyani</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-brand-950 mb-3 leading-tight">Chinthala Kalyani</h2>
                     <p className="text-lg text-brand-600 font-bold mb-6 italic">Post Graduate in Biochemistry from SK University</p>
                     
                     <div className="space-y-4 text-brand-900/70 leading-relaxed text-base">
                       <p>
-                        Our Director, Ch. Kalyani, brings expertise and dedication to our mission. With a Post Graduation in Biochemistry from SK University, she is committed to leading our team towards excellence.
+                        Our Director, Chinthala Kalyani, brings expertise and dedication to our mission. With a Post Graduation in Biochemistry from SK University, she is committed to leading our team towards excellence.
                       </p>
                       <p>
                         Her scientific background allows Biowin Life Science to bridge the gap between complex biochemistry and effective pharmaceutical solutions. Under her guidance, we focus on developing unique approved combinations that offer real benefits to patients.

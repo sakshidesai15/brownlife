@@ -52,7 +52,11 @@ const Footer = () => {
             <ul className="space-y-4 text-brand-200/60">
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-brand-500 shrink-0" />
-                <span>Hyderabad, Telangana, India</span>
+                <span>
+                  A-321, Mastermind 4, Royal Palms, Goregaon (E),
+                  <br />
+                  Greater Mumbai - 400065.
+                </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-brand-500 shrink-0" />

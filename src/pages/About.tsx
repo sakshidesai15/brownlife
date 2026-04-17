@@ -101,7 +101,7 @@ const About = () => {
               <div>
                 <h4 className="text-xl font-bold text-brand-950 mb-3">Our Leadership</h4>
                 <p className="text-sm text-brand-900/70 leading-relaxed">
-                  Our Director, Ch. Kalyani, brings expertise and dedication to our mission. With a Post Graduation in Biochemistry from SK University, she is committed to leading our team towards excellence.
+                  Our Director, Chinthala Kalyani, brings expertise and dedication to our mission. With a Post Graduation in Biochemistry from SK University, she is committed to leading our team towards excellence.
                 </p>
               </div>
             </div>

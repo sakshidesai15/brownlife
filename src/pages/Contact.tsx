@@ -63,7 +63,16 @@ const Contact = () => {
               
               <div className="grid sm:grid-cols-2 gap-6">
                 {[
-                  { icon: <MapPin className="w-5 h-5" />, title: "Our Office", detail: "Hyderabad, Telangana, India" },
+                  { 
+                    icon: <MapPin className="w-5 h-5" />, 
+                    title: "Corporate Address", 
+                    detail: (
+                      <div>
+                        <div>A-321, Mastermind 4, Royal Palms, Goregaon (E),</div>
+                        <div>Greater Mumbai - 400065.</div>
+                      </div>
+                    ) 
+                  },
                   { 
                     icon: <Phone className="w-5 h-5" />, 
                     title: "Phone", 
